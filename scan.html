@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <title>HGRU Quiz - Scan</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <link rel="stylesheet" href="scan.css">
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+</head>
+
+<img src="/assets/base.png" id="base-overlay">
+<style>
+img#base-overlay{
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    left: 0; 
+    right: 0; 
+    margin-inline: auto; 
+    z-index: 99999;
+}
+html{
+    background-color: black;
+}
+</style>
+
+<body style="margin: 0; overflow: hidden;">
+    <div class="container">
+        <div class="title">Point your camera at a quiz point!</div>
+        <a id="start-button" class="start-button">Start QUIZNAME Quiz</a>
+        <p class="footer" style="cursor: pointer;" onclick="window.location.href = '/help.html';">Having and Issue?</p>
+    </div>
+    <a-scene
+        vr-mode-ui="enabled: false;"
+        loading-screen="enabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+        id="scene"
+        embedded
+        gesture-detector
+    >
+        <a-assets>
+            <a-asset-item
+                id="maths_model"
+                src="/models/maths.glb"
+            ></a-asset-item>
+        </a-assets>
+
+        <a-assets>
+            <a-asset-item
+                id="DNA_model"
+                src="/models/DNA.glb"
+            ></a-asset-item>
+        </a-assets>
+
+        <a-assets>
+            <a-asset-item
+                id="earth_model"
+                src="/models/earth.glb"
+            ></a-asset-item>
+        </a-assets>
+
+        <a-assets>
+            <a-asset-item
+                id="football_model"
+                src="/models/football.glb"
+            ></a-asset-item>
+        </a-assets>
+
+        <a-marker
+            id="animated-marker-maths"
+            type="pattern"
+            preset="custom"
+            url="/markers/maths.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
+            <a-entity
+                id="maths-model"
+                scale="0.688 0.688 0.688"
+                animation-mixer="loop: repeat"
+                gltf-model="#maths_model"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+        </a-marker>
+        <a-marker
+            id="animated-marker-biology"
+            type="pattern"
+            preset="custom"
+            url="/markers/biology.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
+            <a-entity
+                id="dna-model"
+                scale="0.688 0.688 0.688"
+                animation-mixer="loop: repeat"
+                gltf-model="#DNA_model"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+        </a-marker>
+        <a-marker
+            id="animated-marker-earth"
+            type="pattern"
+            preset="custom"
+            url="/markers/earth.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
+            <a-entity
+                id="earth-model"
+                scale="0.688 0.688 0.688"
+                animation-mixer="loop: repeat"
+                gltf-model="#earth_model"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+        </a-marker>
+        <a-marker
+            id="animated-marker-football"
+            type="pattern"
+            preset="custom"
+            url="/markers/football.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
+            <a-entity
+                id="football-model"
+                scale="0.688 0.688 0.688"
+                animation-mixer="loop: repeat"
+                gltf-model="#football_model"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
+        </a-marker>
+
+        <!-- Ambient light to provide basic illumination -->
+        <a-light type="ambient" color="#888"></a-light>
+
+        <!-- Directional light to simulate sunlight -->
+        <a-light type="directional" position="0 1 0.5" intensity="1"></a-light>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script src="/scan.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+    "Biology":{
+        "What natural compound is in green plants and gives them their colour?":{
+            "Nitrogen": false,
+            "Chlorophyll": true,
+            "Oxygen": false,
+            "Sulpher": false
+        },
+        "What is the largest organ in the human body?":{
+            "Heart": false,
+            "Brain": false,
+            "Skin": true,
+            "Liver": false
+        },
+        "Phytotoxicology is the study of what?":{
+            "Soil": false,
+            "Plant poisons": true,
+            "Tree growth": false,
+            "Rock formation": false
+        }
+    },
+    "Football":{
+        "Who was the first club to win the FA Cup in 1872?":{
+            "Manchester United": false,
+            "Wanders": true,
+            "Cardiff City": false,
+            "Liverpool FC": false
+        },
+        "Who did Mo Salah play for in 2023?":{
+            "Manchester City": false,
+            "Arsenal": false,
+            "Tottenham Hotspur": false,
+            "Liverpool FC": true
+        },
+        "Who won the UEFA Champions League in 2022?":{
+            "Real Madrid": true,
+            "Inter Milan": false,
+            "Manchester City": false,
+            "Barcelona": false
+        }
+    },
+    "Planets":{
+        "Which planet is closest to the sun?":{
+            "Mercury": true,
+            "Pluto": false,
+            "Venus": false,
+            "Mars": false
+        },
+        "Which planet is furthest from the sun?":{
+            "Uranus": false,
+            "Neptune": true,
+            "Pluto": false,
+            "Mars": false
+        },
+        "Which planet is the coldest with a temperature of -224°C?":{
+            "Mars": false,
+            "Mercury": false,
+            "Uranus": true,
+            "Pluto": false
+        }
+    },
+    "Maths":{
+        "What is the square root of 25?":{
+            "2.5": false,
+            "6": false,
+            "5": true,
+            "7.5": false
+        },
+        "In Modulo 2 what is the sum of 101101 + 11001?":{
+            "1001110": false,
+            "1100110": false,
+            "1000111": false,
+            "1000110": true
+        },
+        "What is the sum of all three angles in an equilateral triangle?":{
+            "120°": false,
+            "180°": true,
+            "360°": false,
+            "240°": false
+        }
+    }
+}

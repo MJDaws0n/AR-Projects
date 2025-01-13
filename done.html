@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>HGRU Quiz - Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">On ${} You got</div>
+        <div id="quiz-title" class="quiz-title"><!-- Score --></div>
+        <div class="question"><!-- Placeholder --></div>
+        <div class="ans-btn" id="play-again">Retry</div>
+        <p class="footer" onclick="window.location.href = '/scan.html';">Back to scan</p>
+    </div>
+</body>
+</html>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const quizName = urlParams.get('q');
+
+    if(quizName === null){
+        window.location.href = '/error.html';
+    }
+
+    const score = urlParams.get('s');
+
+    if(score === null){
+        window.location.href = '/error.html';
+    }
+
+    const outOfScore = urlParams.get('o');
+
+    if(outOfScore === null){
+        window.location.href = '/error.html';
+    }
+
+    document.querySelector('#quiz-title').textContent = `${score} / ${outOfScore}`;
+    document.querySelector('.title').textContent = `On ${quizName} you got`;
+    document.querySelector('#play-again').addEventListener('click', ()=>{
+        window.location.href = `/quiz.html?q=${quizName}`;
+    })
+</script>
