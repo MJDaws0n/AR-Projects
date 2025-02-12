@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGRU Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #e7f3ff;
+            padding: 5px;
+            border-left: 3px solid #0056b3;
+        }
+        .code-snippet {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>HGRU AR Quiz App Review</h1>
+
+    <div class="section">
+        <h2>Background</h2>
+        <p>These are the basic specifications of the app:</p>
+        <ul>
+            <li><strong>Select Framework:</strong> For this project I chose to use Aframe as my small amount of research suggested that it would be easy to use. I also already knew HTML, CSS and JS so it would be simple to adapt my knowledge.</li>
+            <li><strong>Create project structure:</strong> As this is a closed source small scale app, only a simple file structures is needed. A folder for assets, markers, images and models.</li>
+            <li><strong>Development space:</strong> I originaly used github codespace however as there are only limited hours available that get used quicly, I swiched to just pushing code to a github branch and using a local version of PHP to host the file and Microsft devtunnel for accessing on my phone.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Steps</h2>
+        <p>These are the steps I used to build the app:</p>
+        <ul>
+            <li><strong>Design:</strong> Beside the (useless) required design, I also made sure to make a genuinly useful design and created every page in figma before making it.</li>
+            <li><strong>Creating pages:</strong> All the pages started with blank html pages with the name of them, followed by .html, for example, <b>index.html</b> was the home page and <b>help.html</b> was the help page.</li>
+            <li><strong>Page structure and re-usable assets:</strong> Most pages used the default <b>app.css</b> stylesheet I built, this allowed re-usable, easly modifiable, and consistant looking pages.</li>
+            <li><strong>Scanning:</strong> Scannng simply uses Aframe with some HTML to check when a maker <b>.patt</b> file is present, then overlaying a 3D model. A border wa harder to add as Aframe is limited so an overlayed image was required to be used (a bit of a "hacky" method).</li>
+            <li><strong>Quiz:</strong> The quiz worked by having a blank element for question number, subject, current question, and answer a through to c then reading from <b>quiz.json</b>. It searches through the file, and takes query from the URL then selects the questions associated to it (dynamically updating the total questions based on how many are there), and the answer specified. The questions are then sorted into a random order and the answers placed in a random order.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Some example code snippets</h2>
+        <ul>
+            <li> The scaninng page<br>
+                <img style="width: 50%;" src="CodeProof1.png" alt="">
+            </li>
+
+            <li> quiz.json file<br>
+                <img style="width: 50%;" src="CodeProof2.png" alt="">
+            </li>
+
+            <li> Quiz file<br>
+                <img style="width: 50%;" src="CodeProof3.png" alt="">
+            </li>
+
+            <li> Scan page JS<br>
+                <img style="width: 50%;" src="CodeProof4.png" alt="">
+            </li>
+
+            <li> Quiz app JS<br>
+                <img style="width: 50%;" src="CodeProof5.png" alt="">
+            </li>
+
+            <li> File structure<br>
+                <img style="width: 50%;" src="CodeProof6.png" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
